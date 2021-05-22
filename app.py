@@ -16,12 +16,11 @@ def predict():
     For rendering results on HTML GUI
     '''
     #read image file string data
-    filestr = request.files['file'].read()
-    #convert string data to numpy array
-    npimg = numpy.fromstring(filestr, numpy.uint8)
-    # convert numpy array to image
-    image = cv2.imdecode(npimg, cv2.IMREAD_UNCHANGED)
-    # Read the image via file.stream
+    data =request.files['file']
+    filename = secure_filename(file.filename) # save file 
+    filepath = os.path.join(app.config['imgdir'], filename);
+    file.save(filepath)
+    image = cv2.imread(filepath)
     
     
     text_from_pickle = pickle.loads(model)
