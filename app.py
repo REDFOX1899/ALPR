@@ -29,7 +29,7 @@ def predict():
     # Use the loaded pickled model to make predictions
     output = text_from_pickle(image)
 
-    return render_template('index.html', prediction_text='Number Plate: ' output)
+    return render_template('index.html', prediction_text='Number Plate:{}' .format(output))
 
 
 if __name__ == "__main__":
