@@ -20,7 +20,7 @@ def predict():
     #convert string data to numpy array
     npimg = numpy.fromstring(filestr, numpy.uint8)
     # convert numpy array to image
-    image = cv2.imdecode(npimg, cv2.CV_LOAD_IMAGE_UNCHANGED)
+    image = cv2.imdecode(npimg, cv2.IMREAD_UNCHANGED)
     # Read the image via file.stream
     
     
